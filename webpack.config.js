@@ -43,7 +43,8 @@ var options = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
     clean: true,
-    publicPath: 'chrome-extension://pifbikkadjogefgbgeddhihjfjboehom/',
+    // publicPath: 'chrome-extension://pifbikkadjogefgbgeddhihjfjboehom/',
+    publicPath: 'https://res.cloudinary.com/dermasmid/image/upload/v1686186046/'
   },
   module: {
     rules: [
