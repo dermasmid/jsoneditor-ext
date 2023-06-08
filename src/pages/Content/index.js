@@ -11,6 +11,7 @@ function ready() {
 
         const obj = JSON.parse(strippedText);
         const container = document.createElement("div")
+        container.setAttribute('ext-id', chrome.runtime.id)
         container.style.height = "98vh"
     
         const options = {}
@@ -30,7 +31,7 @@ function getTextFromTextOnlyDocument() {
     const bodyChildren = document.body.childNodes;
     const firstChild = bodyChildren[0];
 
-    const bodyHasOnlyOneElement = document.body.childNodes.length === 1;
+    const bodyHasOnlyOneElement = [...document.body.childNodes].filter(n => !n.getAttribute('ext-id')).length === 1;
     const isPre = isPreElement(firstChild);
     const isPlainText = isPlainTextElement(firstChild);
 
