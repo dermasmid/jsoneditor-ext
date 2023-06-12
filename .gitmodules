@@ -1,0 +1,3 @@
+[submodule "jsoneditor"]
+	path = jsoneditor
+	url = git@github.com:dermasmid/jsoneditor.git
