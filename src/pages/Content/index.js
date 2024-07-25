@@ -31,7 +31,7 @@ function getTextFromTextOnlyDocument() {
     const bodyChildren = document.body.childNodes;
     const firstChild = bodyChildren[0];
 
-    const bodyHasOnlyOneElement = [...document.body.childNodes].filter(n => !n.getAttribute?.('ext-id')).length === 1;
+    const bodyHasOnlyOneElement = [...document.body.childNodes].filter(n => !n.getAttribute?.('ext-id')).filter(n => n.className !== 'json-formatter-container').length === 1;
     const isPre = isPreElement(firstChild);
     const isPlainText = isPlainTextElement(firstChild);
 
