@@ -43,8 +43,9 @@ var options = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
     clean: true,
-    // publicPath: 'chrome-extension://pifbikkadjogefgbgeddhihjfjboehom/',
-    publicPath: 'https://res.cloudinary.com/dermasmid/image/upload/v1686186046/'
+    assetModuleFilename: '[name][ext]',
+    // real value is assigned at runtime in src/pages/Content/publicPath.js
+    publicPath: '',
   },
   module: {
     rules: [
@@ -133,12 +134,12 @@ if (env.NODE_ENV === 'development') {
   options.devtool = 'cheap-module-source-map';
 } else {
   options.optimization = {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false,
-      }),
-    ],
+    minimize: false
+    // minimizer: [
+    //   new TerserPlugin({
+    //     extractComments: false,
+    //   }),
+    // ],
   };
 }
 
